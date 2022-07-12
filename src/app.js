@@ -4,7 +4,7 @@ const app=express()
 const forecast=require('./utils/forecast')
 const geocode=require('./utils/geocode')
 const hbs=require('hbs')
-//console.log()
+const PORT=Process.env.PORT || 3000
 //define paths for express
 const publicDirectory=path.join(__dirname,'../','public')
 //partial path
@@ -68,7 +68,7 @@ app.get('*',(req,res)=>{
     res.render('404')
 })
 
- app.listen(3001,()=> {
+ app.listen(PORT,()=> {
 
      console.log('server is running')
  })
